@@ -34,11 +34,11 @@ $ () ->
     $('table').on('keydown', 'tr', (e) ->
         if e.keyCode == 38 # up
             $(this).find('a.less').click()
-        if e.keyCode == 40 or (
+        if e.keyCode == 40 or ( # down
             not e.shiftKey and
             e.keyCode == 9 and
             $(e.target).is($(this).find('input:last')) and
-            $(e.target).closest('tr').is($('table tr').eq(-2))) # down or tab
+            $(e.target).closest('tr').is($('table tr').eq(-2))) # or tab
             add_row()
             e.preventDefault()
     )
