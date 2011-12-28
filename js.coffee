@@ -51,3 +51,15 @@ $ () ->
     $('table').on('click', 'a.more', add_row)
     $('table').on('click', 'a.less', () -> rem_row(this))
     add_row()
+
+    if $.param.fragment()
+        data = $.deparam($.param.fragment())
+        if data['__postit_url']
+            $("#url").val(data['__postit_url'])
+            $('#url').trigger('input')
+        for k, v of data
+            if k == '__postit_url'
+                continue
+            $('table tr td:first-child input:last').val(k).trigger('input')
+            $('table tr td:nth-child(2) input:last').val(v)
+            add_row()

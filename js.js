@@ -17,6 +17,7 @@
   };
 
   $(function() {
+    var data, k, v, _results;
     $('table').on('keydown', 'tr', function(e) {
       if (e.keyCode === 38) $(this).find('a.less').click();
       if (e.keyCode === 40 || (!e.shiftKey && e.keyCode === 9 && $(e.target).is($(this).find('input:last')) && $(e.target).closest('tr').is($('table tr').eq(-2)))) {
@@ -35,7 +36,23 @@
     $('table').on('click', 'a.less', function() {
       return rem_row(this);
     });
-    return add_row();
+    add_row();
+    if ($.param.fragment()) {
+      data = $.deparam($.param.fragment());
+      if (data['__postit_url']) {
+        $("#url").val(data['__postit_url']);
+        $('#url').trigger('input');
+      }
+      _results = [];
+      for (k in data) {
+        v = data[k];
+        if (k === '__postit_url') continue;
+        $('table tr td:first-child input:last').val(k).trigger('input');
+        $('table tr td:nth-child(2) input:last').val(v);
+        _results.push(add_row());
+      }
+      return _results;
+    }
   });
 
 }).call(this);

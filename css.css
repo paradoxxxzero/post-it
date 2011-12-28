@@ -55,3 +55,29 @@ section {
       content: "[+]"; }
     section form a.less:after {
       content: "[−]"; }
+
+footer {
+  color: #dddddd; }
+  footer h3 {
+    float: right;
+    margin: 30px 15px 0; }
+    footer h3 div.float {
+      float: left;
+      margin: 15px; }
+    footer h3 div.postit {
+      margin: 0;
+      height: 50px;
+      width: 50px;
+      texu-align: center;
+      background-color: yellow;
+      box-shadow: 0 4px 6px black;
+      opacity: 0.7;
+      z-index: 1337; }
+      footer h3 div.postit div {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 18px;
+        -webkit-transform: rotate(45deg); }
+        footer h3 div.postit div a {
+          color: black;
+          text-decoration: none; }
