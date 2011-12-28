@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: #888888; }
+  background-color: #555555; }
 
 header {
   text-align: center; }
@@ -11,18 +11,44 @@ header {
 
 section {
   background-color: #ffffcc;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(#fffaae), to(#fff057));
+  background-image: -moz-linear-gradient(#fffaae 0%, #fff057 90%);
+  box-shadow: 0px 10px 16px #222222;
   width: 80%;
-  padding: 4% 2%;
+  padding: 5% 2%;
   margin: auto;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7); }
-  section header label {
-    font-weight: bold; }
-  section header input {
-    width: 80%; }
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.2em; }
+  section input {
+    width: 80%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 1.1em;
+    background-color: transparent;
+    font-family: "Mono";
+    outline: none; }
+    section input:focus {
+      border-color: orangered; }
+  section input[type=submit] {
+    width: 20%;
+    font-family: "Reenie Beanie", cursive;
+    font-size: 1.8em;
+    font-weight: bold;
+    border: none;
+    background-color: transparent; }
+  section header {
+    padding: 1%; }
+    section header label {
+      font-weight: bold;
+      font-size: 1.8em; }
   section article {
     text-align: center; }
-  section form input {
-    width: 80%; }
+  section form table {
+    width: 80%;
+    margin: 5% auto; }
+  section form th {
+    font-size: 1.8em; }
   section form a {
     display: block; }
     section form a.more:before {
