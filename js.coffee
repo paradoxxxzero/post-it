@@ -1,6 +1,6 @@
 new_row = () ->
     $('<tr>')
-        .hide()
+        .css(display: 'none')
         .append(
             $('<td>').append($('<input>'))
             $('<td>').append($('<input>'))

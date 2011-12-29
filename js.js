@@ -2,7 +2,9 @@
   var add_row, new_row, rem_row;
 
   new_row = function() {
-    return $('<tr>').hide().append($('<td>').append($('<input>')), $('<td>').append($('<input>')), $('<th>').append($('<a>').addClass('less')));
+    return $('<tr>').css({
+      display: 'none'
+    }).append($('<td>').append($('<input>')), $('<td>').append($('<input>')), $('<th>').append($('<a>').addClass('less')));
   };
 
   add_row = function() {

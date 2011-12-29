@@ -77,7 +77,8 @@ footer {
         font-size: 12px;
         font-weight: bold;
         margin-top: 18px;
-        -webkit-transform: rotate(45deg); }
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg); }
         footer h3 div.postit div a {
           color: black;
           text-decoration: none; }
