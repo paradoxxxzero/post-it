@@ -36,9 +36,10 @@ init_postit = =>
                             action = "#{location.origin}#{action}"
                         url = "http://paradoxxxzero.github.com/post-it/#__postit_url=#{action}"
                         that.find('input,select,textarea').each ->
-                            name = $(this).attr 'name'
+                            name = encodeURIComponent($(this).attr 'name')
+                            val = encodeURIComponent $(this).val()
                             if name
-                                url += "&#{name}=#{$(this).val()}"
+                                url += "&#{name}=#{val}"
                         window.open url
                     )
             that.mouseenter(->

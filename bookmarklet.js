@@ -32,9 +32,10 @@
           if (action.indexOf('/') === 0) action = "" + location.origin + action;
           url = "http://paradoxxxzero.github.com/post-it/#__postit_url=" + action;
           that.find('input,select,textarea').each(function() {
-            var name;
-            name = $(this).attr('name');
-            if (name) return url += "&" + name + "=" + ($(this).val());
+            var name, val;
+            name = encodeURIComponent($(this).attr('name'));
+            val = encodeURIComponent($(this).val());
+            if (name) return url += "&" + name + "=" + val;
           });
           return window.open(url);
         }));

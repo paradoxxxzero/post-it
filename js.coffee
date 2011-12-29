@@ -60,6 +60,6 @@ $ () ->
         for k, v of data
             if k == '__postit_url'
                 continue
-            $('table tr td:first-child input:last').val(k).trigger('input')
-            $('table tr td:nth-child(2) input:last').val(v)
+            $('table tr td:first-child input:last').val(decodeURIComponent(k)).trigger('input')
+            $('table tr td:nth-child(2) input:last').val(decodeURIComponent(v))
             add_row()
